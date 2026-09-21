@@ -6,7 +6,7 @@ using namespace std;
 
 void sortedInsert(stack<int>&s, int element){
     //base case 
-    if(s.empty() && (!s.empty() && s.top() < element)){
+    if(s.empty() || (!s.empty() && s.top() < element)){
         s.push(element);
         return ;
     }
