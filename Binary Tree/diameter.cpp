@@ -22,7 +22,7 @@ pair<int,int> diameterFast(node* root){
     int rightHeight   = right.second;
 
     // diameter passing through current root (in nodes)
-    int throughRoot = leftHeight + rightHeight + 1;
+    int throughRoot = leftHeight + rightHeight;
 
     int bestDiameter = max(leftDiameter, max(rightDiameter, throughRoot));
     int heightHere   = max(leftHeight, rightHeight) + 1;
