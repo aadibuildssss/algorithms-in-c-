@@ -73,5 +73,11 @@ void levelOrderTraversal(Node* root) {
 }
 
 Node* searchNode(Node* root, int key) {
-    return (root == NULL || root->data == key) ? root : ((root->data > key) ? searchNode(root->left, key) : searchNode(root->right, key));
+    if (root == NULL) return NULL;               // fell off the tree: not found
+    if (root->data == key) return root;          // found it
+
+    if (root->data > key)
+        return searchNode(root->left, key);      // key is smaller, go left
+    else
+        return searchNode(root->right, key);     // key is bigger, go right
 }
